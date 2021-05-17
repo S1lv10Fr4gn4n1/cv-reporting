@@ -1,0 +1,19 @@
+rabbitmq:
+  queue:
+    cv1: "hello-cv1"
+    cv2: "hello-cv2"
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASS:guest}
+    listener:
+      acknowledge-mode: manual
+      simple:
+        prefetch: 10
+
+logging:
+  level:
+    org: INFO
